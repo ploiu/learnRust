@@ -1,11 +1,12 @@
+// modules can be declared as exports this way, and exist in a file named moduleName.rs
+pub mod client;
+pub mod network;
+
 #[cfg(test)]
 mod tests {
+    use super::client;
     #[test]
     fn it_works() {
-        assert_eq!(2 + 2, 4);
+        client::connect();
     }
 }
-
-// modules can be declared as exports this way, and exist in a file named moduleName.rs
-mod client;
-pub mod network;
