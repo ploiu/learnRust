@@ -1,3 +1,9 @@
+enum DifferentTypes {
+    Int(i32),
+    FLoat(f64),
+    Text(String),
+}
+
 fn main() {
     // there are a couple ways of creating vectors
     let first = vec![1, 2, 3, 4, 5];
@@ -16,6 +22,12 @@ fn main() {
         Some(&number) => println!("{}", number),
         None => println!("out of bounds"),
     }
+    // you can use an enum to group different types for when you need to store them in a Vector
+    let different_types = vec![
+        DifferentTypes::FLoat(32.0),
+        DifferentTypes::Int(6),
+        DifferentTypes::Text(String::from("test")),
+    ];
     references();
     iteration();
 }
