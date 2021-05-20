@@ -35,6 +35,9 @@ fn get_inputs() -> Vec<i32> {
 }
 
 fn determine_mean(numbers: &Vec<i32>) -> f64 {
+    if numbers.len() == 0 {
+        return 0.0;
+    }
     let mut sum = 0;
     for num in numbers.iter() {
         sum += num;
@@ -53,6 +56,9 @@ fn determine_median(numbers: &mut Vec<i32>) -> i32 {
 }
 
 fn determine_mode(numbers: &Vec<i32>) -> i32 {
+    if numbers.len() == 0 {
+        return 0;
+    }
     let mut num_count = HashMap::<i32, i32>::new();
     for num in numbers.iter() {
         match num_count.get(num) {
